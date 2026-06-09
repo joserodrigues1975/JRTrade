@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container": "#201f1f",
+                    "surface-bright": "#393939",
+                    "tertiary-fixed": "#ffdbc8",
+                    "chart-line": "#0A69E5",
+                    "success-green": "#22C55E",
+                    "inverse-primary": "#005bc1",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary": "#002e69",
+                    "surface-elevated": "#1E2228",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353534",
+                    "on-primary-fixed": "#001a41",
+                    "on-secondary-container": "#b2b5bc",
+                    "on-tertiary-fixed-variant": "#743400",
+                    "on-error": "#690005",
+                    "error-red": "#EF4444",
+                    "outline-variant": "#414755",
+                    "tertiary-fixed-dim": "#ffb68b",
+                    "on-secondary": "#2d3136",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed-variant": "#43474d",
+                    "tertiary-container": "#e37013",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary-fixed": "#d8e2ff",
+                    "primary-container": "#4b8eff",
+                    "on-tertiary-fixed": "#321300",
+                    "surface-variant": "#353534",
+                    "on-secondary-fixed": "#181c21",
+                    "outline": "#8b90a0",
+                    "border-subtle": "#2A2E35",
+                    "secondary-fixed-dim": "#c3c6cd",
+                    "surface-tint": "#adc6ff",
+                    "on-tertiary-container": "#481e00",
+                    "inverse-surface": "#e5e2e1",
+                    "surface": "#131313",
+                    "on-surface-variant": "#c1c6d7",
+                    "surface-dim": "#131313",
+                    "background": "#131313",
+                    "primary": "#adc6ff",
+                    "secondary-fixed": "#e0e2e9",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary": "#522300",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-primary-container": "#00285c",
+                    "secondary-container": "#43474d",
+                    "tertiary": "#ffb68b",
+                    "secondary": "#c3c6cd",
+                    "on-surface": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "row-height-condensed": "32px",
+                    "row-height-default": "48px",
+                    "container-margin": "24px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .step-card {
+            background: #181C21;
+            border: 1px solid #2A2E35;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-active {
+            color: #adc6ff;
+            font-weight: 700;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(173, 198, 255, 0.08), transparent);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar from JSON -->
+<header class="w-full top-0 sticky flex justify-between items-center px-gutter h-row-height-default z-50 bg-surface border-b border-border-subtle dark:border-border-subtle">
+<div class="flex items-center gap-2 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-primary">menu</span>
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tighter">TRADERPRO</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-border-subtle">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional headshot of a financial trader in a high-tech office environment, lit with cool blue and deep charcoal tones consistent with a modern trading floor. The style is sharp and authoritative, reflecting a high-performance clinical brand identity with minimal shadows and clean lines." src="https://lh3.googleusercontent.com/aida/AP1WRLs-zrvVnfXcNJQjl2y5t5jJAjyRKWnpIPA999Tf-abPPLJCywI4uByPTNqESsIsEqPsP-8KRGSohlcSLRQWH1yHfSdX3T-wDrZlQd6Lg5IJXk1jDwoUiSQvoj1OKuMO4sVeBofExDazYnluD046JRMSG35f8FOAoHlcZxf3hXKs1qvJzkF_Q0mmUIIef2SisKa5HKZfA0GaRddNflHJyMqB9yjl02H3uKN_OrRV3I-g8awM5qw2vKxACnIW"/>
+</div>
+</header>
+<main class="flex-grow hero-gradient">
+<!-- Hero Section -->
+<section class="px-gutter pt-12 pb-8 flex flex-col items-center text-center">
+<div class="mb-4 py-1 px-3 bg-primary-container/10 border border-primary-container/20 rounded-full">
+<span class="font-label-caps text-label-caps text-primary uppercase">Tecnologia PWA</span>
+</div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">
+                TRADERPRO no seu celular
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-8">
+                Instale agora sem precisar de lojas de aplicativos. Performance de cockpit trader direto na tela inicial do seu smartphone.
+            </p>
+<button class="bg-primary-container text-on-primary-container font-headline-md text-headline-md px-10 h-row-height-default rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary-container/20">
+                Instalar Agora
+            </button>
+</section>
+<!-- Smartphone Visualizer Section -->
+<section class="px-gutter py-8 overflow-hidden">
+<div class="relative max-w-sm mx-auto aspect-[9/19] bg-[#000000] border-[8px] border-[#2A2E35] rounded-[2.5rem] shadow-2xl">
+<!-- Screen Content -->
+<div class="absolute inset-0 p-4 flex flex-col">
+<div class="w-full h-2 mt-2 bg-[#1E2228] rounded-full mx-auto max-w-[80px]"></div>
+<div class="mt-8 flex justify-between items-center">
+<div class="font-display-lg text-primary text-xl font-extrabold tracking-tighter">TRADERPRO</div>
+<span class="material-symbols-outlined text-outline">notifications</span>
+</div>
+<div class="mt-6 space-y-4">
+<div class="h-32 bg-surface-container rounded-lg border border-border-subtle flex items-end p-3">
+<div class="w-full h-16 bg-chart-line/20 border-t-2 border-chart-line rounded-sm"></div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="h-20 bg-surface-container rounded-lg border border-border-subtle p-2">
+<p class="text-[10px] text-outline font-bold">BTC/USDT</p>
+<p class="text-sm font-bold text-success-green">+4.2%</p>
+</div>
+<div class="h-20 bg-surface-container rounded-lg border border-border-subtle p-2">
+<p class="text-[10px] text-outline font-bold">ETH/USDT</p>
+<p class="text-sm font-bold text-error-red">-1.8%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Island/Notch effect -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#000000] rounded-b-2xl"></div>
+</div>
+</section>
+<!-- Installation Guide -->
+<section class="px-gutter py-12 space-y-8">
+<h3 class="font-headline-md text-headline-md text-on-surface text-center">Guia de Instalação</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- iOS Step -->
+<div class="step-card p-6 rounded-xl flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">1</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">iOS (iPhone)</h4>
+</div>
+<div class="flex-grow space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">ios_share</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Toque no ícone de <strong>Compartilhar</strong> na barra inferior do Safari.</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">add_box</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Role a lista e selecione <strong>Adicionar à Tela de Início</strong>.</p>
+</div>
+</div>
+</div>
+<!-- Android Step -->
+<div class="step-card p-6 rounded-xl flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">2</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Android (Chrome)</h4>
+</div>
+<div class="flex-grow space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">more_vert</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Toque nos <strong>três pontos</strong> no canto superior direito.</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">install_mobile</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Selecione <strong>Instalar Aplicativo</strong> ou Adicionar à tela inicial.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid (Briefly mentioned) -->
+<section class="px-gutter pb-24 grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="col-span-2 p-4 step-card rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+<div>
+<p class="font-label-caps text-label-caps text-primary">Performance</p>
+<p class="font-body-sm text-body-sm text-on-surface">Carregamento instantâneo.</p>
+</div>
+</div>
+<div class="p-4 step-card rounded-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">cloud_off</span>
+<p class="font-body-sm text-body-sm text-on-surface">Modo Offline</p>
+</div>
+<div class="p-4 step-card rounded-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">security</span>
+<p class="font-body-sm text-body-sm text-on-surface">100% Seguro</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-row-height-default px-gutter pb-safe bg-surface-container-lowest border-t border-border-subtle dark:border-border-subtle md:hidden">
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline active:scale-95 transition-transform duration-100 hover:text-on-surface dark:hover:text-on-surface">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline active:scale-95 transition-transform duration-100 hover:text-on-surface dark:hover:text-on-surface">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-caps text-label-caps">Markets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline active:scale-95 transition-transform duration-100 hover:text-on-surface dark:hover:text-on-surface">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-caps text-label-caps">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary font-bold active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for the CTA button
+        const cta = document.querySelector('button');
+        cta.addEventListener('mousedown', () => {
+            cta.style.transform = 'scale(0.95)';
+        });
+        cta.addEventListener('mouseup', () => {
+            cta.style.transform = 'scale(1)';
+        });
+        
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+</body></html>
